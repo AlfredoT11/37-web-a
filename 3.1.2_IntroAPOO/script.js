@@ -55,13 +55,53 @@ class Persona{
         this.mascotas = [];
     }
 
+    // 5. Crear los métodos
+    saludar(){
+        console.log(`¡Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años!`);
+    }
+
+    saludarAOtraPersona(personaASaludar){
+        console.log(`¡Hola, ${personaASaludar.nombre} mi nombre es ${this.nombre}!`);
+    }
+
+    conocerMejorAmigo(persona){
+        this.mejorAmigo = persona;
+        console.log(`Mi nuevo mejor amigo es: ${persona.nombre}`);
+    }
+
 }
 
 // Creando objetos
 let persona1 = new Persona('Juan', 'Vargas', 'Rodríguez', 30, 'M');
 let persona2 = new Persona('María', 'Molina', 'Mendoza', 52, 'F');
+let persona3 = new Persona('Edgar', 'Torres', 'Rojas', 42, 'M');
 
 // ` <- backtick Alt + 96
 // persona1.nombre + " " + persona1.apellidoPaterno + " " + persona1.apellidoMaterno
 console.log(`${persona1.nombre} ${persona1.apellidoPaterno} ${persona1.apellidoMaterno}`); // Template Strings
 console.log(`${persona2.nombre} ${persona2.apellidoPaterno} ${persona2.apellidoMaterno}`);
+
+
+persona1.saludar();
+persona2.saludar();
+
+persona2.saludarAOtraPersona(persona1);
+
+if(persona1.mejorAmigo == null){
+    console.log(`${persona1.nombre} aún no tiene un mejor amigo. ):`);
+}else{
+    console.log(`El mejor amigo de ${persona1} es ${persona1.mejorAmigo.nombre}`);
+}
+
+persona1.conocerMejorAmigo(persona2);
+
+
+if(persona1.mejorAmigo == null){
+    console.log(`${persona1.nombre} aún no tiene un mejor amigo. ):`);
+}else{
+    console.log(`El mejor amigo de ${persona1.nombre} es ${persona1.mejorAmigo.nombre}`);
+}
+
+persona2.conocerMejorAmigo(persona3);
+
+console.log(`El mejor amigo del mejor amigo de ${persona1.nombre} es: ${persona1.mejorAmigo.mejorAmigo.nombre}`);
