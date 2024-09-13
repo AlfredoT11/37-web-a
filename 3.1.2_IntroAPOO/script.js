@@ -105,3 +105,10 @@ if(persona1.mejorAmigo == null){
 persona2.conocerMejorAmigo(persona3);
 
 console.log(`El mejor amigo del mejor amigo de ${persona1.nombre} es: ${persona1.mejorAmigo.mejorAmigo.nombre}`);
+
+// Ejercicio:
+/*
+    1. Crear una nueva clase llamada Mascota, agregarle al menos 3 atributos y el método hacerSonido().
+    2. Crear un método en la clase Persona que permita agregar mascotas al atributo mascotas.
+    Pista: El método tiene que recibir un objeto de tipo Mascota y se debe agregar ese objeto al arreglo del atributo.
+*/
