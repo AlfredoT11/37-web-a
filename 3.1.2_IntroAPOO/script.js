@@ -45,8 +45,8 @@ class Persona{
 
     // 4. Crear el constructor.
     // Este método se encarga de solicitar espacio en la memoria RAM para el objeto.
-    constructor(nombre, apellidoPaterno, apellidoMaterno, edad, genero){
-        this.nombre = nombre;
+    constructor(nuevoNombre, apellidoPaterno, apellidoMaterno, edad, genero){
+        this.nombre = nuevoNombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.edad = edad;
@@ -67,6 +67,10 @@ class Persona{
     conocerMejorAmigo(persona){
         this.mejorAmigo = persona;
         console.log(`Mi nuevo mejor amigo es: ${persona.nombre}`);
+    }
+
+    adoptarMascota(mascota){
+        this.mascotas.push(mascota);
     }
 
 }
@@ -112,3 +116,39 @@ console.log(`El mejor amigo del mejor amigo de ${persona1.nombre} es: ${persona1
     2. Crear un método en la clase Persona que permita agregar mascotas al atributo mascotas.
     Pista: El método tiene que recibir un objeto de tipo Mascota y se debe agregar ese objeto al arreglo del atributo.
 */
+
+// Punto 1. Crear clase Mascota
+// 1. Crear la clase
+class Mascota{
+
+    // 2. Agregar los atributos
+    constructor(nombre, especie, sonido){
+        this.nombre = nombre;
+        this.especie = especie;
+        this.sonido = sonido;
+    }
+
+    // 3. Agregar los métodos
+    hacerSonido(){
+        return this.sonido;
+    }
+
+}
+
+let mascota1 = new Mascota('Tigrillo', 'Gato', 'Miau');
+let mascota2 = new Mascota('Mocka', 'Perro', 'Woof!');
+
+console.log(mascota1.hacerSonido());
+console.log(mascota2.hacerSonido());
+
+persona1.adoptarMascota(mascota1);
+persona2.adoptarMascota(mascota2);
+
+console.log('Sonidos de las mascotas adoptadas');
+console.log(persona2.mascotas[0].hacerSonido());
+console.log(persona1.mascotas[0].hacerSonido());
+
+console.log(persona1.mascotas[0].nombre);
+persona1.mascotas[0].nombre = 'Bowie';
+console.log(persona1.mascotas[0].nombre);
+
