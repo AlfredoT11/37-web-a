@@ -155,3 +155,65 @@ console.log(pokemon3);
     4. Crear un método en la clase Granja que permita agregar un nuevo animal.
     5. Crear un método en la clase Granja que permita que cada animal haga su sonido.
 */
+
+class Animal{
+    constructor(nombre, edad, colorDeOjos){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.colorDeOjos = colorDeOjos;
+    }
+
+    hacerSonido(){
+
+    }
+}
+
+class Vaca extends Animal{
+    constructor(nombre, edad, colorDeOjos, numeroDeCuernos){
+        super(nombre, edad, colorDeOjos);
+        this.numeroDeCuernos = numeroDeCuernos;
+    }
+
+    hacerSonido(){
+        console.log('Muuuuuuu');
+    }
+}
+
+class Lobo extends Animal{
+    constructor(nombre, edad, colorDeOjos, tieneColmillos){
+        super(nombre, edad, colorDeOjos);
+        this.tieneColmillos = tieneColmillos;
+    }
+
+    hacerSonido(){
+        console.log('Wooooooooooof!');
+    }
+}
+
+
+class Granja{
+    constructor(){
+        this.animales = [];
+    }
+
+    agregarAnimal(animal){
+        this.animales.push(animal);
+    }
+
+    escucharAnimales(){
+        for(let i = 0; i < this.animales.length; i++){
+            this.animales[i].hacerSonido();
+        }
+    }
+}
+
+let vaca1 = new Vaca('Pedro', 5, 'Verdes', 1);
+let vaca2 = new Vaca('Persona', '2', 'Azules', 0);
+let lobo1 = new Lobo('Loki', 7, 'Amarillos', true);
+
+let granja = new Granja();
+granja.agregarAnimal(vaca1);
+granja.agregarAnimal(lobo1);
+granja.agregarAnimal(vaca2);
+
+granja.escucharAnimales();
