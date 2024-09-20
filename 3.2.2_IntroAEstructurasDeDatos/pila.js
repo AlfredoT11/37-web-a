@@ -1,4 +1,8 @@
 /*
+
+La Pila es una estructura de datos lineal conocida como estructura de tipo LIFO (Last In First Out) 
+"El último en entrar es el primero en salir"
+
             tope
 ----------------
 | 5    8      10   <->    [5, 8, 10]

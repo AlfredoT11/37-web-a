@@ -1,3 +1,12 @@
+
+//                  0           1           2           3
+let verduras = ['Zanahoria', 'Cebolla', 'Jitomate', 'Champiñon'];
+console.log(verduras[0]); // <- Regresa la zanahoriza
+console.log(verduras[1]); // <- Regresa la cebolla
+console.log(verduras[2]); // <- Regresa el jitomate
+console.log(verduras[3]); // <- Regresa el champiñon
+console.log(verduras[verduras.length - 1]); // <- Permite acceder al último elemento.
+
 // let frutas = []; // Esto crea un arreglo vacío.
 // let frutas = Array(); // Esto crea un arreglo vacío.
 
